@@ -1,0 +1,43 @@
+{
+  "author": "PlayDay",
+  "manifest_version": 2,
+  "name": "BetterPlease",
+  "version": "1.0",
+  "description": "Helpful Things for Sites",
+  "homepage_url": "https://github.com/playday3008/BetterPlease",
+  "incognito": "spanning",
+  
+  "icons": {
+    "48": "icons/logo.png",
+    "96": "icons/logo@2x.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "*://trade.aliexpress.com/orderList.htm",
+        "*://trade.aliexpress.com/orderList.htm?*",
+        "*://trade.aliexpress.ru/orderList.htm",
+        "*://trade.aliexpress.ru/orderList.htm?*",
+        "*://trade.aliexpress.com/order_list.htm",
+        "*://trade.aliexpress.com/order_list.htm?*",
+        "*://trade.aliexpress.ru/order_list.htm",
+        "*://trade.aliexpress.ru/order_list.htm?*" ],
+      "js": [
+        "waitForSomething.js",
+        "trade.aliexpress.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "*://tunnelbroker.net/*"
+      ],
+      "js": [
+        "waitForSomething.js",
+        "tunnelbroker.net.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
